@@ -14,8 +14,8 @@ function App() {
 
   useEffect(() => {
 
-    if (!localStorage.getItem("clientId")) {
-      localStorage.setItem('clientId', uuid())
+    if (!sessionStorage.getItem("clientId")) {
+      sessionStorage.setItem('clientId', uuid())
     }
   }, [])
 

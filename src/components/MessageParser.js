@@ -3,7 +3,7 @@ import React from 'react';
 
 // eslint-disable-next-line react/prop-types
 const MessageParser = ({ children, actions }) => {
-  const clientId = localStorage.getItem('clientId')
+  const clientId = sessionStorage.getItem('clientId')
 
   const parse = async (message) => {
     const response = await fetch('https://api.ai-chatbot-demo.com/chat/message', {
