@@ -28,8 +28,10 @@ function App() {
             <Chatbot
               config={{
                 botName: 'manager',
-                initialMessages: [createChatBotMessage('Hello, how can I help you?')],
+                initialMessages: [createChatBotMessage('Напишите своё пожелание, а мы подберем для Вас лучший вариант 😉')],
               }}
+              headerText='Чат с менеджером'
+              placeholderText='напишите свое сообщение'
               messageParser={MessageParser}
               actionProvider={ActionProvider}
             />
