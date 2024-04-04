@@ -20,7 +20,7 @@ function App() {
     class ChatWrapper extends React.Component {
         constructor(props) {
             super(props);
-            this.state = {showChat: false};
+            this.state = {showChat: true};
             this.handleTriggerClick = this.handleTriggerClick.bind(this);
         }
 
