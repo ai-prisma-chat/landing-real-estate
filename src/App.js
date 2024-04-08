@@ -1,23 +1,18 @@
-import {useEffect} from "react";
 import React from 'react';
 
 import Chatbot, {createChatBotMessage} from "react-chatbot-kit";
 import MessageParser from "./components/MessageParser";
 import ActionProvider from "./components/ActionProvider";
-
-import uuid from "react-uuid";
+import {ClientContext} from "./components/ClientContext";
+import BotAvatar from "./components/BotAvatar";
 
 import 'react-chatbot-kit/build/main.css';
 import './App.css';
 
 function App() {
-    useEffect(() => {
-        if (!sessionStorage.getItem('clientId')) {
-            sessionStorage.setItem('clientId', uuid())
-        }
-    }, []);
-
     class ChatWrapper extends React.Component {
+        static contextType = ClientContext;
+
         constructor(props) {
             super(props);
             this.state = {showChat: true};
@@ -38,6 +33,9 @@ function App() {
                             config={{
                                 botName: 'manager',
                                 initialMessages: [createChatBotMessage('Напишите своё пожелание, а мы подберем для Вас лучший вариант 😉')],
+                                customComponents: {
+                                    botAvatar: (props) => <BotAvatar/>
+                                }
                             }}
                             headerText='Чат с менеджером'
                             placeholderText='Напишите свое сообщение'
