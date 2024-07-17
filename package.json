@@ -1,7 +1,11 @@
 {
   "name": "react-tmp-app",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "main": "build/static/js/main.js",
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
